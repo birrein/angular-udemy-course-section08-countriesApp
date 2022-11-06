@@ -10,8 +10,12 @@ import { Country } from '../interfaces/countries-response';
 export class CountryService {
   constructor(private http: HttpClient) {}
 
-  searchCountry(term: string): Observable<Country[]> {
+  searchByCountry(term: string): Observable<Country[]> {
     const url = `${environment.countriesApiUrl}/name/${term}`;
+    return this.http.get<Country[]>(url);
+  }
+  searchByCapital(term: string): Observable<Country[]> {
+    const url = `${environment.countriesApiUrl}/capital/${term}`;
     return this.http.get<Country[]>(url);
   }
 }

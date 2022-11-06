@@ -14,15 +14,22 @@ export class ByCountryComponent {
 
   constructor(private countryService: CountryService) {}
 
-  search() {
+  search(term: string) {
     this.error = false;
-    const result = this.countryService.searchCountry(this.term);
+    this.term = term;
+
+    const result = this.countryService.searchByCountry(this.term);
     result.subscribe({
-      next: (countries) => this.countries = countries,
+      next: (countries) => (this.countries = countries),
       error: (err) => {
         this.error = true;
         this.countries = [];
       },
     });
+  }
+
+  suggestions(term: string) {
+    this.error = false;
+    this.term = term;
   }
 }
