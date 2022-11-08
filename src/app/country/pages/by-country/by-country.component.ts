@@ -11,12 +11,15 @@ export class ByCountryComponent {
   term: string = '';
   error: boolean = false;
   countries: Country[] = [];
+  suggestedCountries: Country[] = [];
+  showSuggestions: boolean = false;
 
   constructor(private countryService: CountryService) {}
 
   search(term: string) {
     this.error = false;
     this.term = term;
+    this.showSuggestions = false;
 
     const result = this.countryService.searchByCountry(this.term);
     result.subscribe({
@@ -31,5 +34,18 @@ export class ByCountryComponent {
   suggestions(term: string) {
     this.error = false;
     this.term = term;
+
+    if (term.trim().length === 0) {
+      this.suggestedCountries = [];
+      this.countries = [];
+      this.showSuggestions = false;
+      return;
+    }
+    this.showSuggestions = true;
+
+    this.countryService.searchByCountry(term).subscribe({
+      next: (countries) => (this.suggestedCountries = countries.splice(0, 5)),
+      error: (err) => (this.suggestedCountries = []),
+    });
   }
 }
