@@ -26,4 +26,4 @@ import { CountryInputComponent } from './components/country-input/country-input.
   ],
   imports: [CommonModule, FormsModule, RouterModule],
 })
-export class CountryModule {}
+export class CountriesModule {}

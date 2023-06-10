@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ByCapitalComponent } from './country/pages/by-capital/by-capital.component';
-import { ByCountryComponent } from './country/pages/by-country/by-country.component';
-import { ByRegionComponent } from './country/pages/by-region/by-region.component';
-import { ViewCountryComponent } from './country/pages/view-country/view-country.component';
+import { ByCapitalComponent } from './countries/pages/by-capital/by-capital.component';
+import { ByCountryComponent } from './countries/pages/by-country/by-country.component';
+import { ByRegionComponent } from './countries/pages/by-region/by-region.component';
+import { ViewCountryComponent } from './countries/pages/view-country/view-country.component';
 
 const routes: Routes = [
   {
