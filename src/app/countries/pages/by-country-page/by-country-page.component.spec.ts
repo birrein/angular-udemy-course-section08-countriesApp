@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ByCountryComponent } from './by-country.component';
+import { ByCountryPageComponent } from './by-country-page.component';
 
 describe('ByCountryComponent', () => {
-  let component: ByCountryComponent;
-  let fixture: ComponentFixture<ByCountryComponent>;
+  let component: ByCountryPageComponent;
+  let fixture: ComponentFixture<ByCountryPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ByCountryComponent ]
+      declarations: [ ByCountryPageComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ByCountryComponent);
+    fixture = TestBed.createComponent(ByCountryPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

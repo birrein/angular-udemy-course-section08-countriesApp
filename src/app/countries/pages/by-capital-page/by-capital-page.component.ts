@@ -4,10 +4,10 @@ import { CountryService } from '../../services/country.service';
 
 @Component({
   selector: 'app-by-capital',
-  templateUrl: './by-capital.component.html',
-  styleUrls: ['./by-capital.component.css'],
+  templateUrl: './by-capital-page.component.html',
+  styleUrls: ['./by-capital-page.component.css'],
 })
-export class ByCapitalComponent {
+export class ByCapitalPageComponent {
   term: string = '';
   error: boolean = false;
   countries: Country[] = [];

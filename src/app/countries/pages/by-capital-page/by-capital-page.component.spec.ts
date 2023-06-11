@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewCountryComponent } from './view-country.component';
+import { ByCapitalPageComponent } from './by-capital-page.component';
 
-describe('ViewCountryComponent', () => {
-  let component: ViewCountryComponent;
-  let fixture: ComponentFixture<ViewCountryComponent>;
+describe('ByCapitalComponent', () => {
+  let component: ByCapitalPageComponent;
+  let fixture: ComponentFixture<ByCapitalPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewCountryComponent ]
+      declarations: [ ByCapitalPageComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ViewCountryComponent);
+    fixture = TestBed.createComponent(ByCapitalPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

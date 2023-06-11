@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ByRegionComponent } from './by-region.component';
+import { CountryPageComponent } from './country-page.component';
 
-describe('ByRegionComponent', () => {
-  let component: ByRegionComponent;
-  let fixture: ComponentFixture<ByRegionComponent>;
+describe('ViewCountryComponent', () => {
+  let component: CountryPageComponent;
+  let fixture: ComponentFixture<CountryPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ByRegionComponent ]
+      declarations: [ CountryPageComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ByRegionComponent);
+    fixture = TestBed.createComponent(CountryPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

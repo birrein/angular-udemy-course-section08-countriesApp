@@ -6,10 +6,10 @@ import { Country } from '../../interfaces/countries-response';
 
 @Component({
   selector: 'app-view-country',
-  templateUrl: './view-country.component.html',
-  styleUrls: ['./view-country.component.css'],
+  templateUrl: './country-page.component.html',
+  styleUrls: ['./country-page.component.css'],
 })
-export class ViewCountryComponent implements OnInit {
+export class CountryPageComponent implements OnInit {
   country!: Country;
 
   constructor(

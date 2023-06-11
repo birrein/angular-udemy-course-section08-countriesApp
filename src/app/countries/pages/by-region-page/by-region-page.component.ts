@@ -5,10 +5,10 @@ import { CountryService } from '../../services/country.service';
 
 @Component({
   selector: 'app-by-region',
-  templateUrl: './by-region.component.html',
-  styleUrls: ['./by-region.component.css'],
+  templateUrl: './by-region-page.component.html',
+  styleUrls: ['./by-region-page.component.css'],
 })
-export class ByRegionComponent implements OnInit {
+export class ByRegionPageComponent implements OnInit {
   regions = Region;
   activeRegion!: Region;
   countries: Country[] = [];
