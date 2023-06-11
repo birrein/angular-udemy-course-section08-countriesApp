@@ -1,27 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ByCapitalComponent } from './countries/pages/by-capital/by-capital.component';
-import { ByCountryComponent } from './countries/pages/by-country/by-country.component';
-import { ByRegionComponent } from './countries/pages/by-region/by-region.component';
-import { ViewCountryComponent } from './countries/pages/view-country/view-country.component';
+import { HomePageComponent } from './shared/pages/home-page/home-page.component';
+import { AboutPageComponent } from './shared/pages/about-page/about-page.component';
+import { ContactPageComponent } from './shared/pages/contact-page/contact-page.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ByCountryComponent,
-    pathMatch: 'full',
+    component: HomePageComponent,
   },
   {
-    path: 'region',
-    component: ByRegionComponent,
+    path: 'about',
+    component: AboutPageComponent,
   },
   {
-    path: 'capital',
-    component: ByCapitalComponent,
-  },
-  {
-    path: 'country/:id',
-    component: ViewCountryComponent,
+    path: 'contact',
+    component: ContactPageComponent,
   },
   {
     path: '**',
