@@ -1,28 +1,30 @@
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Bandera</th>
-      <th>País</th>
-      <th>Capital</th>
-      <th>Población</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let country of countries; index as i" class="animate__animated animate__fadeIn animate__faster">
-      <td>{{ i + 1 }}</td>
-      <td>
-        <img
-          [src]="country.flags.svg"
-          [alt]="country.name.common"
-          class="small-flag"
-        />
-      </td>
-      <td>{{ country.name.common }}</td>
-      <td>{{ country.capital }}</td>
-      <td>{{ country.population | number }}</td>
-      <td><a [routerLink]="['/country', country.cca2]">Ver...</a></td>
-    </tr>
-  </tbody>
-</table>
+<div *ngIf="countries.length === 0; else table" class="alert alert-warning text-center">
+  No hay países que mostrar
+</div>
+
+<ng-template #table>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Bandera</th>
+        <th>País</th>
+        <th>Capital</th>
+        <th>Población</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let country of countries; let i = index" class="animate__animated animate__fadeIn animate__faster">
+        <td>{{ i + 1 }}</td>
+        <td>
+          <img [src]="country.flags.svg" [alt]="country.name.common" class="small-flag" />
+        </td>
+        <td>{{ country.name.common }}</td>
+        <td>{{ country.capital }}</td>
+        <td>{{ country.population | number }}</td>
+        <td><a [routerLink]="['/country', country.cca2]">Ver más</a></td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>

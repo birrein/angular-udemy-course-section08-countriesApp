@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Country } from '../../interfaces/countries-response';
-import { CountryService } from '../../services/country.service';
+import { Country } from '../../interfaces/country';
+import { CountriesService } from '../../services/countries.service';
 
 @Component({
   selector: 'app-by-country',
@@ -8,32 +8,23 @@ import { CountryService } from '../../services/country.service';
   styleUrls: ['./by-country-page.component.css'],
 })
 export class ByCountryPageComponent {
-  term: string = '';
   error: boolean = false;
   countries: Country[] = [];
   suggestedCountries: Country[] = [];
   showSuggestions: boolean = false;
 
-  constructor(private countryService: CountryService) {}
+  constructor(private countryService: CountriesService) {}
 
   search(term: string) {
-    this.error = false;
-    this.term = term;
     this.showSuggestions = false;
 
-    const result = this.countryService.searchByCountry(this.term);
-    result.subscribe({
-      next: (countries) => (this.countries = countries),
-      error: (err) => {
-        this.error = true;
-        this.countries = [];
-      },
-    });
+    this.countryService
+      .searchCountry(term)
+      .subscribe((countries) => (this.countries = countries));
   }
 
   suggestions(term: string) {
     this.error = false;
-    this.term = term;
 
     if (term.trim().length === 0) {
       this.suggestedCountries = [];
@@ -43,7 +34,7 @@ export class ByCountryPageComponent {
     }
     this.showSuggestions = true;
 
-    this.countryService.searchByCountry(term).subscribe({
+    this.countryService.searchCountry(term).subscribe({
       next: (countries) => (this.suggestedCountries = countries.splice(0, 5)),
       error: (err) => (this.suggestedCountries = []),
     });

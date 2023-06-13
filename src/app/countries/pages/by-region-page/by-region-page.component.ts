@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Region } from '../../enums/region';
-import { Country } from '../../interfaces/countries-response';
-import { CountryService } from '../../services/country.service';
+import { Country } from '../../interfaces/country';
+import { CountriesService } from '../../services/countries.service';
 
 @Component({
   selector: 'app-by-region',
@@ -13,7 +13,7 @@ export class ByRegionPageComponent implements OnInit {
   activeRegion!: Region;
   countries: Country[] = [];
 
-  constructor(private countryService: CountryService) {}
+  constructor(private countryService: CountriesService) {}
 
   ngOnInit(): void {}
 
@@ -25,7 +25,7 @@ export class ByRegionPageComponent implements OnInit {
     this.countries = [];
 
     this.countryService
-      .searchByRegion(region)
+      .searchRegion(region)
       .subscribe((countries) => (this.countries = countries));
   }
 }

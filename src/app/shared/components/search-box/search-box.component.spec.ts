@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CountryInputComponent } from './country-input.component';
+import { SearchBoxComponent } from './search-box.component';
 
 describe('CountryInputComponent', () => {
-  let component: CountryInputComponent;
-  let fixture: ComponentFixture<CountryInputComponent>;
+  let component: SearchBoxComponent;
+  let fixture: ComponentFixture<SearchBoxComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CountryInputComponent ]
+      declarations: [ SearchBoxComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CountryInputComponent);
+    fixture = TestBed.createComponent(SearchBoxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

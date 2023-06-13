@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { switchMap, tap } from 'rxjs';
-import { CountryService } from '../../services/country.service';
-import { Country } from '../../interfaces/countries-response';
+import { CountriesService } from '../../services/countries.service';
+import { Country } from '../../interfaces/country';
 
 @Component({
   selector: 'app-view-country',
@@ -14,7 +14,7 @@ export class CountryPageComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private countryService: CountryService
+    private countryService: CountriesService
   ) {}
 
   ngOnInit(): void {
