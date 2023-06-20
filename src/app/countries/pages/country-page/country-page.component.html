@@ -1,8 +1,10 @@
-<div *ngIf="!country; else divCountry" class="alert alert-info">
-  Espere por favor...
-</div>
+<ng-template #loading>
+  <div class="alert alert-info">
+    Espere por favor...
+  </div>
+</ng-template>
 
-<ng-template #divCountry>
+<div *ngIf="country; else loading">
   <div class="row">
     <div class="col-12">
       <h1>
@@ -46,4 +48,4 @@
       >
     </div>
   </div>
-</ng-template>
+</div>
