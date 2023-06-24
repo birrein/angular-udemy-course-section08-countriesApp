@@ -35,7 +35,7 @@ export class CountriesService {
     return this.getCountriesRequest(url);
   }
 
-  searchRegion(region: Region): Observable<Country[]> {
+  searchRegion(region: string): Observable<Country[]> {
     const url = `${environment.countriesApiUrl}/region/${region}`;
     return this.getCountriesRequest(url);
   }
